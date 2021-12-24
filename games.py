@@ -54,7 +54,7 @@ class Game:
                 print("Please enter the valid number 1 or 2")
             else:
                 break
-        self.num_players = num_players
+        self.num_players = int(num_players)
     
     def add_players_details(self):
         '''
@@ -62,14 +62,11 @@ class Game:
         '''
         players_details = {}
         for i in range(self.num_players):
-            name = input("Enter the name of player "+i+": ")
-            bet = int(input("Enter the bet of player "+i+": "))
-            players_details[name] = {'bet': bet, 'points': 0}
+            name = input("Enter the name of player "+str(i+1)+": ")
+            bet = int(input("Enter the bet of player "+str(i+1)+": "))
+            players_details[name] = {'bet': bet, 'points': 0, 'cards': []}
         self.players_details = players_details
 
-    def get_players_count(self):
-        return self.num_players
-    
     def get_players_details(self):
         return self.players_details
     
@@ -90,4 +87,5 @@ class Game:
         '''
         This class will be overwritten to start the game
         '''
+        print()
         print("Game starts now!")
