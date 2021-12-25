@@ -11,6 +11,7 @@ def call_game(id, player_details):
 
 game = Game()
 game.get_details_for_game()
+print()
 game_type = game.choose_game()
 
 player_details = game.get_players_details()
